@@ -1,0 +1,1 @@
+export const PHONE_REGEX = /\b\d?\W?\(?\d{3}\)?\W?\d{3}-?\W?\d{4}$/
