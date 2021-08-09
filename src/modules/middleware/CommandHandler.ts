@@ -13,7 +13,7 @@ const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
   switch (tokens[0]) {
     case 'ratgang':
       msg.channel.send(
-        '<:RatGangWhittle:824829679705522212> <:RatGangAric:825584630991159296> <:RatGangCat:822751481681412117> <:RatGangJulio:823021835469848627> <:RatGangKloud:825591024893820928> <:RatGangDedos:842960877312540702> <:RatGangCcat:843985893021974533> <:RatGangClaire:825498502813450251> '
+        `<:RatGangWhittle:824829679705522212> <:RatGangAric:825584630991159296> <:RatGangCat:822751481681412117> <:RatGangJulio:823021835469848627> <:RatGangKloud:825591024893820928> <:RatGangDedos:842960877312540702> <:RatGangCcat:843985893021974533> <:RatGangMouse:874106167423561770> <:RatGangClaire:825498502813450251>`
       )
       break
 

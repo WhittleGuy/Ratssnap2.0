@@ -2,7 +2,7 @@ import * as Discord from 'discord.js'
 
 const Commands = (msg: Discord.Message): void => {
   const embed = new Discord.MessageEmbed()
-    .setTitle('RTatssnap Commands')
+    .setTitle('Ratssnap Commands')
     .setColor('0xff9ed7')
     .addFields(
       {

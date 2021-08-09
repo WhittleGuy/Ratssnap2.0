@@ -2,6 +2,7 @@ import * as Discord from 'discord.js'
 //import * as Twitch from 'tmi.js'
 import CommandHandler from './modules/middleware/CommandHandler'
 import Revolver from './modules/classes/Revolver'
+import { Report } from './modules/functions'
 
 // const TWITCH_OPTIONS = {
 //   options: {debug: true},
@@ -24,7 +25,7 @@ const revolver = new Revolver
 const DiscordBot = () => {
   const PREFIX = '$'
 
-  DClient.login('Nzk4ODkzODQ2NDEwMjk3Mzk0.X_7p3w.TpvK2XadxcLNft921nv0JVDmI8s')
+  DClient.login('bitchyouthought')
   DClient.on('ready', () => {
     console.log(`[+] Connected to Discord as ${DClient.user.tag}!`)
     DClient.user.setActivity('$commands')
@@ -32,6 +33,7 @@ const DiscordBot = () => {
 
   DClient.on('message', (msg: Discord.Message) => {
     if (msg.author.bot) return
+    Report(msg)
     if (msg.content.charAt(0) !== PREFIX) return
     msg.content = msg.content.substr(1)
     CommandHandler(msg, revolver)
