@@ -14,7 +14,7 @@ export const UserInfo = (msg: Discord.Message): void => {
         {
           name: 'Roles',
           value: member.roles.cache
-            .map((roles: Discord.Role) => `${roles}`)
+            .map((role: Discord.Role) => role)
             .slice(0, -1)
             .join(' '),
           inline: true,
