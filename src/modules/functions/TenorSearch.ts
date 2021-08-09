@@ -6,7 +6,6 @@ const TenorSearch = async (msg: Discord.Message, tokens: string[]): Promise<void
     let keywords = 'head pats'
     if (tokens.length > 1) keywords = tokens.slice(1, tokens.length).join(' ')
     const URL = `https://api.tenor.com/v1/search?q=${keywords}&key=35P3YFP3G2W6`
-    console.log(keywords)
     await axios.get(URL).then((res) => {       
         try{
             const images: TenorResult[] = res.data.results
