@@ -27,7 +27,7 @@ const Commands = (msg: Discord.Message): void => {
         inline: true,
       },
       {
-        name: '$userinfo or $ui',
+        name: '$ui',
         value: 'Returns information about yourself or a tagged user',
         inline: true,
       },

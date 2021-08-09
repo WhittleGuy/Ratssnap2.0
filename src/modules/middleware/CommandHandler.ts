@@ -43,7 +43,7 @@ const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
       Rules(msg)
       break
 
-    case 'info':
+    case 'ui':
       UserInfo(msg)
       break
 
