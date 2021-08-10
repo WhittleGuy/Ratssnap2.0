@@ -10,27 +10,32 @@ const Commands = (msg: Discord.Message): void => {
         value: 'Bulk delete a specified number of messages. Admin only.',
         inline: true,
       },
-      {name: '$feet', value: '-', inline: true},
+      { name: '$feet', value: '-', inline: true },
       {
         name: '$gif',
         value: 'Search for gifs using Tenor (defaults to head pats)',
         inline: true,
       },
-      {name: '$onGod', value: 'On god?', inline: true},
-      {name: '$pats', value: 'Returns a random head pat gif', inline: true},
-      {name: '$pickles', value: 'Truly a gift to us all', inline: true},
-      {name: '$ratssnap', value: 'I am here, unfortunately', inline: true},
-      {name: '$ratgang', value: 'Summons the #RatGang', inline: true},
+      { name: '$onGod', value: 'On god?', inline: true },
+      { name: '$pats', value: 'Returns a random head pat gif', inline: true },
+      { name: '$pickles', value: 'Truly a gift to us all', inline: true },
+      { name: '$ratssnap', value: 'I am here, unfortunately', inline: true },
+      { name: '$ratgang', value: 'Summons the #RatGang', inline: true },
       {
         name: '$russian',
         value: 'Play a game of russian roulette',
         inline: true,
       },
       {
+        name: '$say',
+        value: 'Make ratssnap say something for you',
+        inline: true,
+      },
+      {
         name: '$ui',
         value: 'Returns information about yourself or a tagged user',
         inline: true,
-      },
+      }
     )
 
   msg.channel.send(embed)

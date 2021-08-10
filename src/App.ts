@@ -20,12 +20,12 @@ import { Report } from './modules/functions'
 const DClient = new Discord.Client()
 //const TClient = new Twitch.Client(TWITCH_OPTIONS)
 
-const revolver = new Revolver
+const revolver = new Revolver()
 
 const DiscordBot = () => {
   const PREFIX = '$'
 
-  DClient.login('bitchyouthought')
+  DClient.login('bitch you thought')
   DClient.on('ready', () => {
     console.log(`[+] Connected to Discord as ${DClient.user.tag}!`)
     DClient.user.setActivity('$commands')

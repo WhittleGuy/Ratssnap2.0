@@ -9,7 +9,7 @@ const BulkDelete = (msg: Discord.Message, tokens: string[]): void => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   msg.channel.bulkDelete(parseInt(tokens[1]) + 1).then(() => {
-    msg.channel.send(embed).then((msg) => msg.delete({timeout: 3000}))
+    msg.channel.send(embed).then((msg) => msg.delete({ timeout: 3000 }))
   })
 }
 
