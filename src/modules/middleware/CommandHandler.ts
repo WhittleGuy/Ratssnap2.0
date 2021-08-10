@@ -1,6 +1,17 @@
 import * as Discord from 'discord.js'
 import Revolver from '../classes/Revolver'
-import { BulkDelete, Commands, Feet, OnGod, PhoneDeletion, Pickles, Rules, TenorSearch, UserInfo } from '../functions'
+import {
+  BulkDelete,
+  Commands,
+  Feet,
+  OnGod,
+  PhoneDeletion,
+  Pickles,
+  Rules,
+  Say,
+  TenorSearch,
+  UserInfo,
+} from '../functions'
 import { FuckYou, LoveYou, NoYou } from '../functions/Triggered'
 import AdminCheck from './AdminCheck'
 
@@ -30,7 +41,7 @@ const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
     case 'delete':
       BulkDelete(msg, tokens)
       break
-      
+
     case 'gif':
       TenorSearch(msg, tokens)
       break
@@ -59,11 +70,17 @@ const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
       Pickles(msg)
       break
 
+    case 'say':
+      Say(msg)
+      break
+
     case 'russian':
-      if (revolver.chamber === null || (tokens[1] === 'spin' && AdminCheck(msg))) {
+      if (
+        revolver.chamber === null ||
+        (tokens[1] === 'spin' && AdminCheck(msg))
+      ) {
         revolver.spin(msg)
-      }
-      else revolver.fire(msg)
+      } else revolver.fire(msg)
 
     default:
       FuckYou(msg)
