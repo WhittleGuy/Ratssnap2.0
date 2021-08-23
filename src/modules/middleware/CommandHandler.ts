@@ -10,6 +10,7 @@ import {
   Rules,
   Say,
   TenorSearch,
+  Tone,
   UserInfo,
 } from '../functions'
 import { FuckYou, LoveYou, NoYou } from '../functions/Triggered'
@@ -72,6 +73,10 @@ const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
 
     case 'say':
       Say(msg)
+      break
+
+    case 'tone':
+      Tone(msg)
       break
 
     case 'russian':

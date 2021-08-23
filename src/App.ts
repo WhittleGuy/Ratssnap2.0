@@ -25,7 +25,7 @@ const revolver = new Revolver()
 const DiscordBot = () => {
   const PREFIX = '$'
 
-  DClient.login('bitch you thought')
+  DClient.login('Nzk4ODkzODQ2NDEwMjk3Mzk0.X_7p3w.ueKRIWHOulRiEwTQ8kBfGnu6QgQ')
   DClient.on('ready', () => {
     console.log(`[+] Connected to Discord as ${DClient.user.tag}!`)
     DClient.user.setActivity('$commands')
