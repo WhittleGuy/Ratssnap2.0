@@ -5,6 +5,7 @@ import {
   BulkDelete,
   Commands,
   Feet,
+  Furry,
   OnGod,
   PhoneDeletion,
   Pickles,
@@ -40,13 +41,13 @@ const CommandHandler = (
       break
 
     case 'clean':
-      BulkDelete(msg, tokens)
-      break
     case 'clear':
-      BulkDelete(msg, tokens)
-      break
     case 'delete':
       BulkDelete(msg, tokens)
+      break
+
+    case 'furry':
+      Furry(msg)
       break
 
     case 'gif':

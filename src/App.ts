@@ -32,7 +32,7 @@ let interval: NodeJS.Timeout
 const DiscordBot = () => {
   const PREFIX = '$'
 
-  DClient.login('haha fuck you')
+  DClient.login('Nzk4ODkzODQ2NDEwMjk3Mzk0.X_7p3w.HbQe-GS_811xCF1UOeALFyTT-BY')
   DClient.on('ready', () => {
     console.log(`[+] Connected to Discord as ${DClient.user.tag}!`)
     DClient.user.setActivity('$commands')
