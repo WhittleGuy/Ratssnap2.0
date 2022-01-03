@@ -18,18 +18,18 @@ const TenorSearch = async (
           // @ts-ignore
           images[Math.floor(Math.random() * images.length)].media[0].gif.url
         )
-        .setColor('0xff9ed7')
-        .setFooter('Powered by Tenor')
-      msg.channel.send(embed)
+        .setColor('#ff9ed7')
+        .setFooter({ text: 'Powered by Tenor' })
+      msg.channel.send({ embeds: [embed] })
     } catch {
       const embed = new Discord.MessageEmbed()
-        .setColor('0xff9ed7')
+        .setColor('#ff9ed7')
         .setDescription(
           'No results found for search: ' +
             tokens.slice(1, tokens.length).join(' ')
         )
-        .setFooter('Powered by Tenor')
-      msg.channel.send(embed)
+        .setFooter({ text: 'Powered by Tenor' })
+      msg.channel.send({ embeds: [embed] })
     }
   })
 }

@@ -5,15 +5,18 @@ const Report = (msg: Discord.Message): void => {
     msg.delete()
     msg.channel
       .send('Thank you for your message. I have sent it to the mods.')
-      .then((msg) => msg.delete({ timeout: 1500 }))
+      .then((msg) => setTimeout(() => msg.delete(), 1500))
     const user = msg.mentions.users.first() || msg.member.user
 
     const embed = new Discord.MessageEmbed()
-      .setAuthor(user.tag, user.displayAvatarURL())
-      .setColor('0xffee8f')
-      .setFooter('User ID: ' + msg.member.id)
+      .setAuthor({
+        name: user.tag,
+        iconURL: user.displayAvatarURL(),
+      })
+      .setColor('#ffee8f')
+      .setFooter({ text: 'User ID: ' + msg.member.id })
       .setTitle('Mod Mail')
-      .setColor('0xff9ed7')
+      .setColor('#ff9ed7')
       .addFields({ name: 'Message', value: msg.content, inline: false })
 
     // eslint-disable-next-line

@@ -6,7 +6,7 @@
   "author": "Brandon Whittle",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^15.12.5",
+    "@types/node": "^17.0.7",
     "@types/tmi.js": "^1.7.1",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.5.0",
     "tmi.js": "^1.8.3"
   }
 }

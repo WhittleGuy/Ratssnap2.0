@@ -1,5 +1,6 @@
 import * as Discord from 'discord.js'
 import Revolver from '../classes/Revolver'
+import StudyTimer from '../classes/StudyTimer'
 import {
   BulkDelete,
   Commands,
@@ -14,18 +15,23 @@ import {
   UserInfo,
 } from '../functions'
 import { FuckYou, LoveYou, NoYou } from '../functions/Triggered'
+import Whittle from '../functions/WhittleRules'
 import AdminCheck from './AdminCheck'
 
-const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
+const CommandHandler = (
+  msg: Discord.Message,
+  revolver: Revolver,
+  timer: StudyTimer
+): void => {
   // Immediately check for a phone number and delete message if present
   PhoneDeletion(msg)
 
   // Top switch for functions that return a simple answer
   const tokens = msg.content.toLowerCase().split(' ')
-  switch (tokens[0]) {
+  switch (tokens[0].toLowerCase()) {
     case 'ratgang':
       msg.channel.send(
-        `<:RatGangWhittle:824829679705522212> <:RatGangAric:825584630991159296> <:RatGangCat:822751481681412117> <:RatGangJulio:823021835469848627> <:RatGangKloud:825591024893820928> <:RatGangDedos:842960877312540702> <:RatGangCcat:843985893021974533> <:RatGangMouse:874106167423561770> <:RatGangClaire:825498502813450251>`
+        `<:RatGangWhittle:887203782927200256> <:RatGangAric:887203783237582888> <:RatGangCat:887203783258570762> <:RatGangJulio:887203784260988948> <:RatGangKloud:887203782423883807> <:RatGangDedos:887203780448370739> <:RatGangCcat:887203783963181087> <:RatGangMouse:887203783380205638> <:RatGangClaire:887203782633615391>`
       )
       break
 
@@ -86,11 +92,51 @@ const CommandHandler = (msg: Discord.Message, revolver: Revolver): void => {
       ) {
         revolver.spin(msg)
       } else revolver.fire(msg)
+      break
+
+    case 'study':
+      if (msg.channel.id === '883478942865035334') {
+        if (!tokens[1]) {
+          timer.status(msg)
+        } else if (tokens[1] === 'toggle') {
+          if (tokens[2] && parseInt(tokens[2])) {
+            timer.toggle(msg, parseInt(tokens[2]))
+          } else {
+            timer.toggle(msg)
+          }
+          break
+        } else if (tokens[1] === 'add') {
+          try {
+            timer.add(msg, msg.mentions.users)
+          } catch (err) {
+            console.log(err)
+            break
+          }
+          break
+        } else if (tokens[1] === 'remove') {
+          try {
+            timer.remove(msg, msg.mentions.users)
+          } catch (err) {
+            console.log(err)
+            break
+          }
+          break
+        } else {
+          msg.channel.send('Invalid command.')
+          break
+        }
+      }
+
+      break
+
+    case 'whittle':
+      Whittle(msg)
+      break
 
     default:
       FuckYou(msg)
       LoveYou(msg)
-      NoYou(msg, tokens)
+      NoYou(msg)
       break
   }
 }

@@ -3,7 +3,7 @@ import * as Discord from 'discord.js'
 const Rules = (msg: Discord.Message): void => {
   const embed = new Discord.MessageEmbed()
     .setTitle('Pro Gamer Zone Rules')
-    .setColor('0xff9ed7')
+    .setColor('#ff9ed7')
     .addFields([
       {
         name: 'Speech',
@@ -27,7 +27,7 @@ const Rules = (msg: Discord.Message): void => {
           '- If you have a problem with somebody you deal with it in private, or tag/DM admins if you think it affects the server.',
       },
     ])
-  msg.channel.send(embed)
+  msg.channel.send({ embeds: [embed] })
 }
 
 export default Rules
